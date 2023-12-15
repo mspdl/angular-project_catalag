@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalculatorService } from './projects/calculator';
-import { CalculatorRoutes } from './projects/calculator/calculato-routing.module';
+import { CalculatorRoutes } from './projects/calculator/calculator-routing.module';
+import { CurrencyConverterRoutes } from './projects/currency_converter/converter-routing.module';
 import { DashboardRoutes } from './projects/dashboard/dashboard-routing.module';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   ...DashboardRoutes,
   ...CalculatorRoutes,
+  ...CurrencyConverterRoutes,
 ];
 
 @NgModule({

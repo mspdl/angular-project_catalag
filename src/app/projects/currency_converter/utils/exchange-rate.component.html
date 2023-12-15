@@ -1,0 +1,43 @@
+<div
+  [id]="id"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="modalLabel"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modalLabel">
+          Exchange rate in
+          {{ conversionResponse?.create_date | date : "M/d/yyyy" }}
+        </h4>
+      </div>
+      <div class="modal-body text-center">
+        <div>
+          <h2>
+            {{ conversion?.value | currency : conversion?.fromCurrency }} =
+            {{ conversionTotalValue | currency : conversion?.toCurrency }}
+          </h2>
+          <p>
+            {{ 1 | currency : conversion?.fromCurrency }} =
+            {{ conversionValue | currency : conversion?.toCurrency }}
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="newConversion()">
+          New conversion
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
