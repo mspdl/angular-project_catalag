@@ -1,0 +1,112 @@
+<div class="container">
+  <h2>Tic-Tac-Toe!</h2>
+
+  <div *ngIf="showStart" class="main">
+    <a href="#" (click)="onStartGame($event)" class="button"> Start </a>
+  </div>
+
+  <div *ngIf="showBoard" class="board">
+    <ul>
+      <li
+        class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': onSetToX(0, 0),
+          'kz-img-o': onSetToO(0, 0),
+          'kz-victory-color': onShowVictory(0, 0)
+        }"
+        (click)="onPlay(0, 0)"
+      ></li>
+
+      <li
+        class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': onSetToX(0, 1),
+          'kz-img-o': onSetToO(0, 1),
+          'kz-victory-color': onShowVictory(0, 1)
+        }"
+        (click)="onPlay(0, 1)"
+      ></li>
+
+      <li
+        class="kz-border-bottom"
+        [ngClass]="{
+          'kz-img-x': onSetToX(0, 2),
+          'kz-img-o': onSetToO(0, 2),
+          'kz-victory-color': onShowVictory(0, 2)
+        }"
+        (click)="onPlay(0, 2)"
+      ></li>
+
+      <li
+        class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': onSetToX(1, 0),
+          'kz-img-o': onSetToO(1, 0),
+          'kz-victory-color': onShowVictory(1, 0)
+        }"
+        (click)="onPlay(1, 0)"
+      ></li>
+
+      <li
+        class="kz-border-bottom kz-border-right"
+        [ngClass]="{
+          'kz-img-x': onSetToX(1, 1),
+          'kz-img-o': onSetToO(1, 1),
+          'kz-victory-color': onShowVictory(1, 1)
+        }"
+        (click)="onPlay(1, 1)"
+      ></li>
+
+      <li
+        class="kz-border-bottom"
+        [ngClass]="{
+          'kz-img-x': onSetToX(1, 2),
+          'kz-img-o': onSetToO(1, 2),
+          'kz-victory-color': onShowVictory(1, 2)
+        }"
+        (click)="onPlay(1, 2)"
+      ></li>
+
+      <li
+        class="kz-border-right"
+        [ngClass]="{
+          'kz-img-x': onSetToX(2, 0),
+          'kz-img-o': onSetToO(2, 0),
+          'kz-victory-color': onShowVictory(2, 0)
+        }"
+        (click)="onPlay(2, 0)"
+      ></li>
+
+      <li
+        class="kz-border-right"
+        [ngClass]="{
+          'kz-img-x': onSetToX(2, 1),
+          'kz-img-o': onSetToO(2, 1),
+          'kz-victory-color': onShowVictory(2, 1)
+        }"
+        (click)="onPlay(2, 1)"
+      ></li>
+
+      <li
+        [ngClass]="{
+          'kz-img-x': onSetToX(2, 2),
+          'kz-img-o': onSetToO(2, 2),
+          'kz-victory-color': onShowVictory(2, 2)
+        }"
+        (click)="onPlay(2, 2)"
+      ></li>
+    </ul>
+  </div>
+
+  <div *ngIf="showEnd" class="game-over">
+    <span>
+      <p *ngIf="player === 2">You won!!!</p>
+      <p *ngIf="player === 1">You lost!</p>
+      <p *ngIf="player === 0">Draw!!</p>
+      <br />
+    </span>
+  </div>
+  <a *ngIf="showBoard" href="#" class="button" (click)="onNewGame($event)">{{
+    showEnd ? "Play again" : "Reset"
+  }}</a>
+</div>

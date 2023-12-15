@@ -5,6 +5,7 @@ import { CalculatorRoutes } from './projects/calculator/calculator-routing.modul
 import { CurrencyConverterRoutes } from './projects/currency_converter/converter-routing.module';
 import { DashboardRoutes } from './projects/dashboard/dashboard-routing.module';
 import { TaskRoutes } from './projects/task_manager';
+import { TicTacToeRoutes } from './projects/tic-tac-toe/tic-tac-toe.routing-module';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   ...CalculatorRoutes,
   ...CurrencyConverterRoutes,
   ...TaskRoutes,
+  ...TicTacToeRoutes
 ];
 
 @NgModule({
